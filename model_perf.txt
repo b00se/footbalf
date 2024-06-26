@@ -1,0 +1,6 @@
+QB 2019 only
+LinearRegression MAE: 1.7139781870023765, MSE: 4.65894981618349
+Linear Regression Equation: y = 18.1838 + (-0.4359 * completions) + (0.6893 * attempts) + (3.5162 * passing_yards) + (4.0807 * passing_tds) + (-0.7680 * interceptions) + (-0.1890 * sack_fumbles_lost) + (0.3730 * passing_air_yards) + (0.2654 * passing_yards_after_catch) + (0.1106 * passing_epa) + (-0.0804 * pacr) + (1.1151 * dakota) + (0.7063 * carries) + (2.3377 * rushing_yards) + (0.1042 * defense_vs_pos) + (0.3373 * implied_total_diff)
+DecisionTreeRegressor MAE: 2.645714285714286, MSE: 16.44911020408163
+RandomForestRegressor MAE: 1.8645836734693897, MSE: 6.689017911836738
+GradientBoostingRegressor MAE: 1.8411341101181733, MSE: 6.125832191010827
