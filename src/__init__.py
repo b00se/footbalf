@@ -1,6 +1,7 @@
 from .data_preprocessing import(
     import_and_preprocess_weekly_data,
     import_and_preprocess_schedule_data,
+    check_data
 )
 
 from .feature_engineering import(

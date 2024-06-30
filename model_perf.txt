@@ -1,6 +1,60 @@
-QB 2019 only
-LinearRegression MAE: 1.7139781870023765, MSE: 4.65894981618349
-Linear Regression Equation: y = 18.1838 + (-0.4359 * completions) + (0.6893 * attempts) + (3.5162 * passing_yards) + (4.0807 * passing_tds) + (-0.7680 * interceptions) + (-0.1890 * sack_fumbles_lost) + (0.3730 * passing_air_yards) + (0.2654 * passing_yards_after_catch) + (0.1106 * passing_epa) + (-0.0804 * pacr) + (1.1151 * dakota) + (0.7063 * carries) + (2.3377 * rushing_yards) + (0.1042 * defense_vs_pos) + (0.3373 * implied_total_diff)
-DecisionTreeRegressor MAE: 2.645714285714286, MSE: 16.44911020408163
-RandomForestRegressor MAE: 1.8645836734693897, MSE: 6.689017911836738
-GradientBoostingRegressor MAE: 1.8411341101181733, MSE: 6.125832191010827
+Evaluating LinearRegression...
+   Fold MAE: 7.230392, MSE: 78.512753, R2: -0.036284
+   Fold MAE: 6.880150, MSE: 70.035749, R2: 0.055149
+   Fold MAE: 6.464933, MSE: 66.245597, R2: 0.043953
+   Fold MAE: 6.309545, MSE: 64.353931, R2: 0.146991
+   Fold MAE: 6.550302, MSE: 64.808442, R2: 0.098445
+LinearRegression - Average MAE: 6.6871, Average MSE: 68.7913, Average R2: 0.0617
+Evaluating Ridge...
+   Fold MAE: 7.185714, MSE: 77.765834, R2: -0.026425
+   Fold MAE: 6.872607, MSE: 69.950690, R2: 0.056296
+   Fold MAE: 6.462570, MSE: 66.203218, R2: 0.044565
+   Fold MAE: 6.308814, MSE: 64.337826, R2: 0.147204
+   Fold MAE: 6.550345, MSE: 64.808030, R2: 0.098451
+Ridge - Average MAE: 6.6760, Average MSE: 68.6131, Average R2: 0.0640
+Evaluating Lasso...
+   Fold MAE: 6.887546, MSE: 73.542108, R2: 0.029324
+   Fold MAE: 6.991675, MSE: 71.831629, R2: 0.030920
+   Fold MAE: 6.540518, MSE: 67.928681, R2: 0.019663
+   Fold MAE: 6.629355, MSE: 70.593621, R2: 0.064284
+   Fold MAE: 6.773283, MSE: 67.576159, R2: 0.059943
+Lasso - Average MAE: 6.7645, Average MSE: 70.2944, Average R2: 0.0408
+Evaluating DecisionTreeRegressor...
+   Fold MAE: 10.003607, MSE: 153.127688, R2: -1.021120
+   Fold MAE: 9.136862, MSE: 132.588251, R2: -0.788746
+   Fold MAE: 8.671288, MSE: 116.730623, R2: -0.684639
+   Fold MAE: 8.865012, MSE: 122.264075, R2: -0.620606
+   Fold MAE: 9.164075, MSE: 135.525127, R2: -0.885300
+DecisionTreeRegressor - Average MAE: 9.1682, Average MSE: 132.0472, Average R2: -0.8001
+Evaluating RandomForestRegressor...
+   Fold MAE: 7.054501, MSE: 77.772836, R2: -0.026518
+   Fold MAE: 7.032270, MSE: 72.672216, R2: 0.019580
+   Fold MAE: 6.480935, MSE: 65.952643, R2: 0.048181
+   Fold MAE: 6.397715, MSE: 66.714752, R2: 0.115698
+   Fold MAE: 6.634414, MSE: 67.000147, R2: 0.067956
+RandomForestRegressor - Average MAE: 6.7200, Average MSE: 70.0225, Average R2: 0.0450
+Evaluating GradientBoostingRegressor...
+   Fold MAE: 7.273836, MSE: 82.368362, R2: -0.087173
+   Fold MAE: 7.078841, MSE: 74.824198, R2: -0.009452
+   Fold MAE: 6.591962, MSE: 68.100346, R2: 0.017186
+   Fold MAE: 6.515504, MSE: 69.090789, R2: 0.084204
+   Fold MAE: 6.680716, MSE: 67.501066, R2: 0.060988
+GradientBoostingRegressor - Average MAE: 6.8282, Average MSE: 72.3770, Average R2: 0.0132
+
+Final Results:
+LinearRegression - Average MAE: 6.6871, Average MSE: 68.7913, Average R2: 0.0617
+Ridge - Average MAE: 6.6760, Average MSE: 68.6131, Average R2: 0.0640
+Lasso - Average MAE: 6.7645, Average MSE: 70.2944, Average R2: 0.0408
+DecisionTreeRegressor - Average MAE: 9.1682, Average MSE: 132.0472, Average R2: -0.8001
+RandomForestRegressor - Average MAE: 6.7200, Average MSE: 70.0225, Average R2: 0.0450
+GradientBoostingRegressor - Average MAE: 6.8282, Average MSE: 72.3770, Average R2: 0.0132
+
+Hyperparam tuning #1
+
+Final Results:
+LinearRegression - Average MAE: 6.2957, Average MSE: 62.6499, Average R2: 0.0796
+Ridge - Average MAE: 6.2956, Average MSE: 62.6483, Average R2: 0.0796
+Lasso - Average MAE: 6.4043, Average MSE: 65.8167, Average R2: 0.0339
+DecisionTreeRegressor - Average MAE: 9.0330, Average MSE: 128.6171, Average R2: -0.8947
+RandomForestRegressor - Average MAE: 6.2741, Average MSE: 62.4891, Average R2: 0.0822
+GradientBoostingRegressor - Average MAE: 6.2763, Average MSE: 62.3958, Average R2: 0.0836

@@ -1,6 +1,13 @@
 import nfl_data_py as nfl
 import pandas as pd
 
+def check_data(df, message):
+    print(f"{message}")
+    print(f"Shape: {df.shape}")
+    print(f"Missing Values:\n{df.isnull().sum()}")
+    print(df.head())
+    print("\n")
+
 def import_and_preprocess_weekly_data(seasons):
     weekly_data = nfl.import_weekly_data(seasons, downcast=True)
     weekly_data = weekly_data.loc[weekly_data['season_type'] == 'REG']

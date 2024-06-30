@@ -22,19 +22,19 @@ def calculate_fantasy_points(df):
     return df
 
 def calculate_fp_averages(df):
-    df['dk_fp_avg'] = df.groupby('player_id')['dk_fp'].transform('mean')
+    df['dk_fp_avg'] = df.groupby('player_id')['dk_fp'].transform(lambda x: x.expanding().mean().shift()).round(2)
 
     # rolling averages
     df['dk_fp_last1'] = df.groupby('player_id')['dk_fp'].shift(1)
-    df['dk_fp_last3'] = df.groupby('player_id')['dk_fp'].shift(1).rolling(3).mean()
-    df['dk_fp_last5'] = df.groupby('player_id')['dk_fp'].shift(1).rolling(5).mean()
+    df['dk_fp_last3'] = df.groupby('player_id')['dk_fp'].shift(1).rolling(3).mean().round(2)
+    df['dk_fp_last5'] = df.groupby('player_id')['dk_fp'].shift(1).rolling(5).mean().round(2)
 
     # fill missing dk_fp_last3 and dk_fp_last5 with dk_fp_last1 or dk_fp_avg if available
     df['dk_fp_last3']  = df['dk_fp_last3'].fillna(df['dk_fp_last1']).fillna(df['dk_fp_avg'])
     df['dk_fp_last5']  = df['dk_fp_last5'].fillna(df['dk_fp_last3']).fillna(df['dk_fp_last1']).fillna(df['dk_fp_avg'])
 
     # identify players with insufficient data for rolling averages
-    df['isRookie'] = df['dk_fp_last1'].isna()
+    df['is_rookie'] = df['dk_fp_last1'].isna()
 
     # calculate position specific averages
     position_avg_dk_fp = df.groupby('position')['dk_fp'].mean()
